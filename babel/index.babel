@@ -1,0 +1,41 @@
+class Info extends React.Component{
+    render(){
+        return (
+           <div id="info">
+            <h1 id="title">GitHub-flavored Markdown Previewer</h1>
+            <p>Type in the left and view in the right box. For syntax reference, <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/">click me</a>
+            </p>
+           </div>
+        );
+    }
+};
+
+class Previewer extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      text : "View Here\n====="
+    };
+  }
+  handleChange(){
+    this.setState({
+      // what is the difference ? text: event.target.value
+      text: this.refs.content.value
+    });
+  }
+
+  render() {
+    let markdown = marked(this.state.text);
+    return (
+         <div>
+             <Info />
+             <div className="main-content">
+                       <textarea rows="20" cols="50" ref="content" onChange={this.handleChange.bind(this)}></textarea> 
+                       <div id="output-area"  dangerouslySetInnerHTML={{ __html: markdown }} ></div>
+             </div>
+         </div>
+    );
+  }
+}
+
+ReactDOM.render( <Previewer />, document.getElementById('container'));
