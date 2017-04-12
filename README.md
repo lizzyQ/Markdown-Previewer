@@ -1,7 +1,8 @@
 ## Synopsis
 
-Markdown Preview is a useful tool. By typing gitHub-flavored Markdown into the left text area, the preview window will show the decoded output simultaneously.
-It's an React project. 
+Markdown Preview is a useful tool. By typing gitHub-flavored Markdown into the 
+left text area, the preview window will show the decoded output simultaneously.
+It's an Rect project. 
 ---
 ## Preview
 
